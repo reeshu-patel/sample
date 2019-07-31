@@ -1,0 +1,21 @@
+public static void main(String[] args) 
+    {
+countWordsUsingStringTokenizer(contents);
+
+ long end = System.currentTimeMillis(); 
+        System.out.println("Counting to 10000000 takes " + 
+                                    (end - start) + "ms"); 
+
+}
+
+
+
+public static int countWordsUsingStringTokenizer(String sentence) {
+long start = System.currentTimeMillis(); 
+   
+ if (sentence == null || sentence.isEmpty()) {
+      return 0;
+    }
+    StringTokenizer tokens = new StringTokenizer(sentence);
+    return tokens.countTokens();
+  }

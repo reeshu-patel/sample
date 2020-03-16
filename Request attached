@@ -1,0 +1,37 @@
+@Before("init()")
+public void filterBeforeHandling(JoinPoint joinPoint) throws Exception {
+  log.debug("before handing");
+  ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+  HttpServletRequest request = attributes.getRequest();
+  Map<String, String> requestInfoMap = new LinkedHashMap<>();
+  String clientIpAddr = RequestHelper.getRealIp(request);
+  String requestUri = request.getRequestURI();
+  String requestMethod = request.getMethod();
+  int size = 0;
+  requestInfoMap.put(TemplateEnum.MESSAGE_SOURCE, environment.getProperty(ENV_LOG_KAFKA_MESSAGE_SOURCE));
+  requestInfoMap.put(TemplateEnum.REMOTE_HOST, clientIpAddr);
+  requestInfoMap.put(TemplateEnum.REQUEST_METHOD, requestMethod);
+  requestInfoMap.put(TemplateEnum.RESPONSE_BODY_SIZE, String.valueOf(size));
+  requestInfoMap.put(TemplateEnum.REQUEST_URI, requestUri);
+  requestInfoMap.put(TemplateEnum.SERVICE_NAME, environment.getProperty(ENV_APPLICATION_NAME));
+  requestInfo.set(requestInfoMap);
+  startTime.set(System.currentTimeMillis());
+}@Before("init()")
+public void filterBeforeHandling(JoinPoint joinPoint) throws Exception {
+  log.debug("before handing");
+  ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+  HttpServletRequest request = attributes.getRequest();
+  Map<String, String> requestInfoMap = new LinkedHashMap<>();
+  String clientIpAddr = RequestHelper.getRealIp(request);
+  String requestUri = request.getRequestURI();
+  String requestMethod = request.getMethod();
+  int size = 0;
+  requestInfoMap.put(TemplateEnum.MESSAGE_SOURCE, environment.getProperty(ENV_LOG_KAFKA_MESSAGE_SOURCE));
+  requestInfoMap.put(TemplateEnum.REMOTE_HOST, clientIpAddr);
+  requestInfoMap.put(TemplateEnum.REQUEST_METHOD, requestMethod);
+  requestInfoMap.put(TemplateEnum.RESPONSE_BODY_SIZE, String.valueOf(size));
+  requestInfoMap.put(TemplateEnum.REQUEST_URI, requestUri);
+  requestInfoMap.put(TemplateEnum.SERVICE_NAME, environment.getProperty(ENV_APPLICATION_NAME));
+  requestInfo.set(requestInfoMap);
+  startTime.set(System.currentTimeMillis());
+}

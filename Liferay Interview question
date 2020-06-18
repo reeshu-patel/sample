@@ -1,0 +1,158 @@
+Jio  -- 07905729941
+
+Liferay Interview Question  
+http://www.liferaysavvy.com/2016/09/liferay-interview-questions.html
+http://www.javasavvy.com/interview-questions/liferay-interview-questions/
+
+Difference Between java 1.6 and Java 1.7
+http://softwareengineering.stackexchange.com/questions/193630/summary-of-differences-between-java-versions
+
+Liferay CMS
+
+Custom query in liferay
+
+Sheduler in liferay
+
+Liferay Service Using a Hook 
+
+Diffrence between hook and ext
+
+Difference between jsr 168 and jsr 286 in liferay.
+
+Portlet lifecycle.
+
+Difference between structure and template in liferay.
+
+Difference between organization and site in liferay.
+
+Connecting to different database using Liferay Service Builder.
+http://liferaytrends.blogspot.my/2012/05/connecting-to-different-database-using.html
+
+type of roll in liferay.
+
+How can I get the user site roles in liferay.
+
+Liferay Service Builder Many to Many Relation.
+
+Liferay Service Builder. 
+
+JNDI configuration Liferay DB configuration using JNDI. 
+
+Portlet intregation with theme,layout,webcontent. 
+
+Dynamic query in Liferay. 
+
+LDAP intregation.
+
+Liferay Clustering.
+
+Portal-model-hint file for manageing value of column
+
+Liferay Theme
+
+Theme Setting with true and false for footer selection in spesific site
+https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-1/settings
+
+
+Liferay Application Display Template (ADT)
+http://proliferay.com/liferay-application-display-template-adt/
+
+Liferay Service Builder and Transaction
+http://proliferay.com/liferay-service-builder-transaction/
+
+Transaction Management with Liferay Service
+
+difference between portlet session and httpsession
+
+	-The only difference is the Portal has given all teh PortletSession data objects crazy namespace names so that one portlet can’t see 		another portlets session data.
+
+Liferay Theme Define Objects
+http://proliferay.com/liferay-theme-define-objects/
+	user
+	timeZone
+	themeDisplay
+	theme
+	scopeGroupId
+	realUser
+	portletDisplay
+	plid
+	permissionChecker
+	locale
+	layoutTypePortlet
+	layout
+	contact
+	company
+	colorScheme
+	account
+
+Portlet Define Objects
+http://proliferay.com/portlet-define-objects/
+	RenderRequest
+	ResourceRequest
+	ActionRequest
+	EventRequest
+	RenderResponse
+	ResourceResponse
+	ActionResponse
+	EventResponse
+	PortletConfig
+	PortletSession
+	Map<String, Object>
+	PortletPreferences
+
+Type Of IPC
+
+    IPC Events
+    Public Render Parameters IPC
+    Portlet Sessions IPC 
+    Client Side IPC with AJAX
+    Client Side IPC with Cookies
+
+What is different between findBy and fetchBy methods in Liferay services?
+	The difference between them is the behavior in case the entity corresponding to the primary key does not exist; while fetchEntity 	  method simply returns null, the getEntity method throws a NoSuchEntityException exception (a subclass of PortalException).
+
+What is Liferay Model Listeners and its importance
+https://dev.liferay.com/develop/tutorials/-/knowledge_base/6-2/creating-model-listeners
+
+What is PrincipalException in Liferay and when it occurred?
+
+	Permission error in portlets
+
+How to disable Liferay cache to Liferay portal entities and custom entities
+http://btnkumar.blogspot.my/2011/07/entity-caching-disabling-custom-portlet.html
+
+ 	<entity name="MyModelEntity" table="MyModelEntity" local-service="true" remote-service="true" cache-enabled="false">
+
+	portal-ext.properties:
+	value.object.entity.cache.enabled.com.liferay.portlet.ratings.model.RatingsEntry=false
+	value.object.finder.cache.enabled.com.liferay.portlet.ratings.model.RatingsEntry=false
+	And that's it, caching for "RatingsEntry" will be disabled, while caching for other entities will still be turned-on.
+
+Explain Liferay cache mechanism.
+
+http://liferaysatish.blogspot.my/2015/05/custom-cache-implementation.html
+
+	Liferay internally uses EHCache provider for caching mechanism. Normally if we store any object in cache that is expiring after 10 		minutes. This is because of default cache declaration in ‘liferay-multi-vm-clustered.xml’.The path for the above
+	‘liferay-multi-vm-clustered.xml’ file is,
+	è  \tomcat-7.0.40\webapps\ROOT\WEB-INF\lib\portal-impl.jar.
+	Extract the above ‘portal-impl.jar’ file .
+
+
+What are the differences between IPC using event and IPC using public render
+	Public Render parameters allows you to share data using render parameters
+	Portlet event model is a loosely coupled, that allows creating portlets as stand-alone portlets that can be wired together with other 		portlets at runtime
+
+How can we read the portal properties in the portlet using Liferay API?
+	To read this file you can use liferay com.liferay.util.portlet.PortletProps api as below:
+   	String courses=PortletProps.get("courses");
+
+How we can register the configuration page implementation class in a portlet
+
+	Open the liferay-portlet.xml file and add the element
+	<configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction</configuration-action-class> below 		your Location Listing Portlet’s <icon>...</icon> tag. Here’s a snippet to show you where it goes in the context of
+	your liferay-portlet.xml file.
+
+What is portlet preferences?
+
+	Portlet Preferences are properties for storing basic portlet configuration data. Preferences are often used by administrators to 		provide customized views of a portlet to subsets of users or even all of a portlet’s users.
+
